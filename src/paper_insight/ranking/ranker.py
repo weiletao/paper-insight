@@ -53,13 +53,13 @@ class Ranker:
 
         content = "\n".join(lines)
         out = Path(output_path) if output_path else self._output_dir / "ranking.md"
-        out.write_text(content)
+        out.write_text(content, encoding="utf-8")
         return str(out)
 
     def generate_csv(self, scores: list[PaperScore], output_path: str | Path | None = None) -> str:
         """Generate a ranking.csv."""
         out = Path(output_path) if output_path else self._output_dir / "ranking.csv"
-        with open(out, "w", newline="") as f:
+        with open(out, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow([
                 "rank", "paper_name", "composite", "star_rating",
