@@ -34,7 +34,17 @@ converter:
   provider: mineru
 ```
 
-> 需要安装 [MinerU](https://github.com/opendatalab/MinerU) (`pip install mineru`) 用于 PDF 转 Markdown。
+> **前置依赖：MinerU** — PDF 转 Markdown 需要安装 [mineru-open-api](https://github.com/opendatalab/MinerU) 工具。
+>
+> ```bash
+> # 推荐：使用 npm 安装（需要 Node.js 18+）
+> npm install -g mineru-open-api
+>
+> # 或：使用 uv 安装工具
+> uv tool install mineru-open-api
+> ```
+>
+> 验证安装：`mineru-open-api --help` 能正常输出帮助即表示安装成功。
 
 ## 用法
 
