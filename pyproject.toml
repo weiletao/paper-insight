@@ -1,0 +1,27 @@
+[project]
+name = "paper-insight"
+version = "0.1.0"
+description = "AI-driven scientific paper screening and value assessment"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.12",
+    "rich>=13",
+    "pydantic>=2",
+    "pyyaml>=6",
+    "openai>=1.0",
+]
+
+[project.scripts]
+paper-insight = "paper_insight.main:cli"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
